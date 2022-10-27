@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Mon Oct 24 23:42:43 2022
+# Process ID: 230912
+# Current directory: D:/vivadowork/pipeline/pipeline.runs/synth_1
+# Command line: vivado.exe -log pipeline_cpu.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pipeline_cpu.tcl
+# Log file: D:/vivadowork/pipeline/pipeline.runs/synth_1/pipeline_cpu.vds
+# Journal file: D:/vivadowork/pipeline/pipeline.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source pipeline_cpu.tcl -notrace

@@ -1,0 +1,18 @@
+0.6
+2017.1
+Apr 14 2017
+19:10:27
+D:/vivadowork/8_pipeline_cpu/adder.v,1461905924,verilog,,,,adder,,,,,,,,
+D:/vivadowork/8_pipeline_cpu/alu.v,1461985380,verilog,,,,alu,,,,,,,,
+D:/vivadowork/8_pipeline_cpu/decode.v,1462784490,verilog,,,,decode,,,,,,,,
+D:/vivadowork/8_pipeline_cpu/exe.v,1462784638,verilog,,,,exe,,,,,,,,
+D:/vivadowork/8_pipeline_cpu/fetch.v,1666583731,verilog,,,,fetch,,,,,,,,
+D:/vivadowork/8_pipeline_cpu/mem.v,1666584081,verilog,,,,mem,,,,,,,,
+D:/vivadowork/8_pipeline_cpu/multiply.v,1462586548,verilog,,,,multiply,,,,,,,,
+D:/vivadowork/8_pipeline_cpu/pipeline_cpu.v,1666582170,verilog,,,,pipeline_cpu,,,,,,,,
+D:/vivadowork/8_pipeline_cpu/regfile.v,1461985342,verilog,,,,regfile,,,,,,,,
+D:/vivadowork/8_pipeline_cpu/tb.v,1666628344,verilog,,,,tb,,,,,,,,
+D:/vivadowork/8_pipeline_cpu/wb.v,1461985734,verilog,,,,wb,,,,,,,,
+D:/vivadowork/pipeline/pipeline.sim/sim_1/behav/glbl.v,1492045074,verilog,,,,glbl,,,,,,,,
+D:/vivadowork/pipeline/pipeline.srcs/sources_1/ip/data_ram/sim/data_ram.v,1666139204,verilog,,,,data_ram,,,,,,,,
+D:/vivadowork/pipeline/pipeline.srcs/sources_1/ip/inst_rom/sim/inst_rom.v,1666580069,verilog,,,,inst_rom,,,,,,,,
