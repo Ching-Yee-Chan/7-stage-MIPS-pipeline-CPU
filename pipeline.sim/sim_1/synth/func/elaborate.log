@@ -22,7 +22,7 @@ Compiling module xil_defaultlib.multiply
 Compiling module xil_defaultlib.exe
 Compiling module unisims_ver.OBUF
 Compiling module unisims_ver.FDSE_default
-Compiling module xil_defaultlib.fetch
+Compiling module xil_defaultlib.fetch1
 Compiling module xil_defaultlib.mem
 Compiling module xil_defaultlib.wb
 Compiling module unisims_ver.BUFG
@@ -47,6 +47,7 @@ Compiling module xil_defaultlib.inst_rom_blk_mem_gen_v8_3_6_synt...
 Compiling module xil_defaultlib.inst_rom_blk_mem_gen_v8_3_6
 Compiling module xil_defaultlib.inst_rom
 Compiling module unisims_ver.MUXF7
+Compiling module unisims_ver.FDRE(IS_C_INVERTED=1'b1)
 Compiling module xil_defaultlib.regfile
 Compiling module xil_defaultlib.pipeline_cpu
 Compiling module xil_defaultlib.tb

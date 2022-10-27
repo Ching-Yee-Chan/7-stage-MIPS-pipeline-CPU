@@ -3,12 +3,16 @@ Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
 Running: E:/vivado/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto fb1cff9766e84610876396cbf61fcacf --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_6 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 33 differs from formal bit length 32 for port IF1_IF2_bus [D:/vivadowork/8_pipeline_cpu/pipeline_cpu.v:285]
+WARNING: [VRFC 10-278] actual bit length 33 differs from formal bit length 32 for port IF2_IF3_bus [D:/vivadowork/8_pipeline_cpu/pipeline_cpu.v:299]
 WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.1/nightly/2017_04_14_1846317/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.fetch
+Compiling module xil_defaultlib.fetch1
+Compiling module xil_defaultlib.fetch2
+Compiling module xil_defaultlib.fetch3
 Compiling module xil_defaultlib.decode
 Compiling module xil_defaultlib.adder
 Compiling module xil_defaultlib.alu

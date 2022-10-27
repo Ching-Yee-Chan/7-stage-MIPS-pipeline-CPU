@@ -21,7 +21,9 @@ read_verilog -library xil_defaultlib {
   D:/vivadowork/8_pipeline_cpu/alu.v
   D:/vivadowork/8_pipeline_cpu/decode.v
   D:/vivadowork/8_pipeline_cpu/exe.v
-  D:/vivadowork/8_pipeline_cpu/fetch.v
+  D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch1.v
+  D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch2.v
+  D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch3.v
   D:/vivadowork/8_pipeline_cpu/mem.v
   D:/vivadowork/8_pipeline_cpu/multiply.v
   D:/vivadowork/8_pipeline_cpu/regfile.v

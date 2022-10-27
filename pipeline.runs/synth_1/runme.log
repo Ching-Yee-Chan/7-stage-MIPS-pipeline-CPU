@@ -14,49 +14,52 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t-fbg676'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t-fbg676'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 233796 
+INFO: Helper process launched with PID 124752 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 373.289 ; gain = 76.070
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 374.090 ; gain = 76.062
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'pipeline_cpu' [D:/vivadowork/8_pipeline_cpu/pipeline_cpu.v:9]
-INFO: [Synth 8-638] synthesizing module 'fetch' [D:/vivadowork/8_pipeline_cpu/fetch.v:9]
-INFO: [Synth 8-256] done synthesizing module 'fetch' (1#1) [D:/vivadowork/8_pipeline_cpu/fetch.v:9]
+INFO: [Synth 8-638] synthesizing module 'fetch1' [D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch1.v:9]
+INFO: [Synth 8-256] done synthesizing module 'fetch1' (1#1) [D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch1.v:9]
+WARNING: [Synth 8-689] width (33) of port connection 'IF1_IF2_bus' does not match port width (32) of module 'fetch1' [D:/vivadowork/8_pipeline_cpu/pipeline_cpu.v:285]
+INFO: [Synth 8-638] synthesizing module 'fetch2' [D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch2.v:21]
+INFO: [Synth 8-256] done synthesizing module 'fetch2' (2#1) [D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch2.v:21]
+WARNING: [Synth 8-689] width (33) of port connection 'IF2_IF3_bus' does not match port width (32) of module 'fetch2' [D:/vivadowork/8_pipeline_cpu/pipeline_cpu.v:299]
+INFO: [Synth 8-638] synthesizing module 'fetch3' [D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch3.v:21]
+INFO: [Synth 8-256] done synthesizing module 'fetch3' (3#1) [D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch3.v:21]
 INFO: [Synth 8-638] synthesizing module 'decode' [D:/vivadowork/8_pipeline_cpu/decode.v:8]
-INFO: [Synth 8-256] done synthesizing module 'decode' (2#1) [D:/vivadowork/8_pipeline_cpu/decode.v:8]
+INFO: [Synth 8-256] done synthesizing module 'decode' (4#1) [D:/vivadowork/8_pipeline_cpu/decode.v:8]
 INFO: [Synth 8-638] synthesizing module 'exe' [D:/vivadowork/8_pipeline_cpu/exe.v:8]
 INFO: [Synth 8-638] synthesizing module 'alu' [D:/vivadowork/8_pipeline_cpu/alu.v:8]
 INFO: [Synth 8-638] synthesizing module 'adder' [D:/vivadowork/8_pipeline_cpu/adder.v:8]
-INFO: [Synth 8-256] done synthesizing module 'adder' (3#1) [D:/vivadowork/8_pipeline_cpu/adder.v:8]
-INFO: [Synth 8-256] done synthesizing module 'alu' (4#1) [D:/vivadowork/8_pipeline_cpu/alu.v:8]
+INFO: [Synth 8-256] done synthesizing module 'adder' (5#1) [D:/vivadowork/8_pipeline_cpu/adder.v:8]
+INFO: [Synth 8-256] done synthesizing module 'alu' (6#1) [D:/vivadowork/8_pipeline_cpu/alu.v:8]
 INFO: [Synth 8-638] synthesizing module 'multiply' [D:/vivadowork/8_pipeline_cpu/multiply.v:8]
-INFO: [Synth 8-256] done synthesizing module 'multiply' (5#1) [D:/vivadowork/8_pipeline_cpu/multiply.v:8]
-INFO: [Synth 8-256] done synthesizing module 'exe' (6#1) [D:/vivadowork/8_pipeline_cpu/exe.v:8]
+INFO: [Synth 8-256] done synthesizing module 'multiply' (7#1) [D:/vivadowork/8_pipeline_cpu/multiply.v:8]
+INFO: [Synth 8-256] done synthesizing module 'exe' (8#1) [D:/vivadowork/8_pipeline_cpu/exe.v:8]
 INFO: [Synth 8-638] synthesizing module 'mem' [D:/vivadowork/8_pipeline_cpu/mem.v:8]
 INFO: [Synth 8-226] default block is never used [D:/vivadowork/8_pipeline_cpu/mem.v:89]
 INFO: [Synth 8-226] default block is never used [D:/vivadowork/8_pipeline_cpu/mem.v:107]
-INFO: [Synth 8-256] done synthesizing module 'mem' (7#1) [D:/vivadowork/8_pipeline_cpu/mem.v:8]
+INFO: [Synth 8-256] done synthesizing module 'mem' (9#1) [D:/vivadowork/8_pipeline_cpu/mem.v:8]
 INFO: [Synth 8-638] synthesizing module 'wb' [D:/vivadowork/8_pipeline_cpu/wb.v:10]
-INFO: [Synth 8-256] done synthesizing module 'wb' (8#1) [D:/vivadowork/8_pipeline_cpu/wb.v:10]
-INFO: [Synth 8-638] synthesizing module 'inst_rom' [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-230912-LAPTOP-P861Q9K2/realtime/inst_rom_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'inst_rom' (9#1) [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-230912-LAPTOP-P861Q9K2/realtime/inst_rom_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'wb' (10#1) [D:/vivadowork/8_pipeline_cpu/wb.v:10]
+INFO: [Synth 8-638] synthesizing module 'inst_rom' [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-124188-LAPTOP-P861Q9K2/realtime/inst_rom_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'inst_rom' (11#1) [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-124188-LAPTOP-P861Q9K2/realtime/inst_rom_stub.v:6]
 INFO: [Synth 8-638] synthesizing module 'regfile' [D:/vivadowork/8_pipeline_cpu/regfile.v:8]
 WARNING: [Synth 8-6014] Unused sequential element rf_reg[0] was removed.  [D:/vivadowork/8_pipeline_cpu/regfile.v:31]
-INFO: [Synth 8-256] done synthesizing module 'regfile' (10#1) [D:/vivadowork/8_pipeline_cpu/regfile.v:8]
-INFO: [Synth 8-638] synthesizing module 'data_ram' [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-230912-LAPTOP-P861Q9K2/realtime/data_ram_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'data_ram' (11#1) [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-230912-LAPTOP-P861Q9K2/realtime/data_ram_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'pipeline_cpu' (12#1) [D:/vivadowork/8_pipeline_cpu/pipeline_cpu.v:9]
+INFO: [Synth 8-256] done synthesizing module 'regfile' (12#1) [D:/vivadowork/8_pipeline_cpu/regfile.v:8]
+INFO: [Synth 8-638] synthesizing module 'data_ram' [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-124188-LAPTOP-P861Q9K2/realtime/data_ram_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'data_ram' (13#1) [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-124188-LAPTOP-P861Q9K2/realtime/data_ram_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'pipeline_cpu' (14#1) [D:/vivadowork/8_pipeline_cpu/pipeline_cpu.v:9]
 WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[31] driven by constant 0
 WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[30] driven by constant 0
 WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[29] driven by constant 0
 WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[28] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[27] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[26] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[25] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[24] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[23] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[22] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[21] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[20] driven by constant 0
+WARNING: [Synth 8-3331] design decode has unconnected port WB_wdest[4]
+WARNING: [Synth 8-3331] design decode has unconnected port WB_wdest[3]
+WARNING: [Synth 8-3331] design decode has unconnected port WB_wdest[2]
+WARNING: [Synth 8-3331] design decode has unconnected port WB_wdest[1]
+WARNING: [Synth 8-3331] design decode has unconnected port WB_wdest[0]
 WARNING: [Synth 8-3331] design pipeline_cpu has unconnected port mem_addr[31]
 WARNING: [Synth 8-3331] design pipeline_cpu has unconnected port mem_addr[30]
 WARNING: [Synth 8-3331] design pipeline_cpu has unconnected port mem_addr[29]
@@ -82,7 +85,7 @@ WARNING: [Synth 8-3331] design pipeline_cpu has unconnected port mem_addr[10]
 WARNING: [Synth 8-3331] design pipeline_cpu has unconnected port mem_addr[1]
 WARNING: [Synth 8-3331] design pipeline_cpu has unconnected port mem_addr[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 414.367 ; gain = 117.148
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 414.418 ; gain = 116.391
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -92,17 +95,17 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 414.367 ; gain = 117.148
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 414.418 ; gain = 116.391
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a200tfbg676-2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-230912-LAPTOP-P861Q9K2/dcp5/blk_mem_gen_0_in_context.xdc] for cell 'data_ram_module'
-Finished Parsing XDC File [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-230912-LAPTOP-P861Q9K2/dcp5/blk_mem_gen_0_in_context.xdc] for cell 'data_ram_module'
-Parsing XDC File [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-230912-LAPTOP-P861Q9K2/dcp7/inst_rom_in_context.xdc] for cell 'inst_rom_module'
-Finished Parsing XDC File [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-230912-LAPTOP-P861Q9K2/dcp7/inst_rom_in_context.xdc] for cell 'inst_rom_module'
+Parsing XDC File [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-124188-LAPTOP-P861Q9K2/dcp5/blk_mem_gen_0_in_context.xdc] for cell 'data_ram_module'
+Finished Parsing XDC File [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-124188-LAPTOP-P861Q9K2/dcp5/blk_mem_gen_0_in_context.xdc] for cell 'data_ram_module'
+Parsing XDC File [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-124188-LAPTOP-P861Q9K2/dcp7/inst_rom_in_context.xdc] for cell 'inst_rom_module'
+Finished Parsing XDC File [D:/vivadowork/pipeline/pipeline.runs/synth_1/.Xil/Vivado-124188-LAPTOP-P861Q9K2/dcp7/inst_rom_in_context.xdc] for cell 'inst_rom_module'
 Parsing XDC File [D:/vivadowork/pipeline/pipeline.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [D:/vivadowork/pipeline/pipeline.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
@@ -110,16 +113,16 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 759.254 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 754.992 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 759.254 ; gain = 462.035
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 754.992 ; gain = 456.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tfbg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 759.254 ; gain = 462.035
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 754.992 ; gain = 456.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -127,7 +130,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for data_ram_module. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst_rom_module. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 759.254 ; gain = 462.035
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 754.992 ; gain = 456.965
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element product_temp_reg was removed.  [D:/vivadowork/8_pipeline_cpu/multiply.v:80]
 INFO: [Synth 8-5546] ROM "rf_reg[31]" won't be mapped to RAM because it is too sparse
@@ -162,7 +165,7 @@ INFO: [Synth 8-5546] ROM "rf_reg[3]" won't be mapped to RAM because it is too sp
 INFO: [Synth 8-5546] ROM "rf_reg[2]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "rf_reg[1]" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 759.254 ; gain = 462.035
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 754.992 ; gain = 456.965
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -187,13 +190,13 @@ Detailed RTL Component Info :
 	              154 Bit    Registers := 1     
 	              118 Bit    Registers := 1     
 	               64 Bit    Registers := 2     
-	               32 Bit    Registers := 36    
+	               32 Bit    Registers := 7     
 	                5 Bit    Registers := 1     
 	                1 Bit    Registers := 12    
 +---Muxes : 
 	   2 Input     64 Bit        Muxes := 3     
 	   4 Input     32 Bit        Muxes := 2     
-	   2 Input     32 Bit        Muxes := 30    
+	   2 Input     32 Bit        Muxes := 31    
 	   2 Input     24 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 3     
@@ -214,14 +217,14 @@ Detailed RTL Component Info :
 	              154 Bit    Registers := 1     
 	              118 Bit    Registers := 1     
 	               64 Bit    Registers := 1     
-	                1 Bit    Registers := 5     
-Module fetch 
+	               32 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
+Module fetch1 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     30 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
 +---Muxes : 
 	   4 Input     32 Bit        Muxes := 1     
 	   2 Input     32 Bit        Muxes := 2     
@@ -231,7 +234,7 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit       Adders := 1     
 	   2 Input     30 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 7     
+	   2 Input     32 Bit        Muxes := 8     
 	   2 Input      5 Bit        Muxes := 3     
 Module adder 
 Detailed RTL Component Info : 
@@ -286,8 +289,6 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit        Muxes := 1     
 Module regfile 
 Detailed RTL Component Info : 
-+---Registers : 
-	               32 Bit    Registers := 31    
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 31    
 ---------------------------------------------------------------------------------
@@ -310,14 +311,11 @@ WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[31] driven by c
 WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[30] driven by constant 0
 WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[29] driven by constant 0
 WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[28] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[27] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[26] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[25] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[24] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[23] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[22] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[21] driven by constant 0
-WARNING: [Synth 8-3917] design pipeline_cpu has port cpu_5_valid[20] driven by constant 0
+WARNING: [Synth 8-3331] design decode has unconnected port WB_wdest[4]
+WARNING: [Synth 8-3331] design decode has unconnected port WB_wdest[3]
+WARNING: [Synth 8-3331] design decode has unconnected port WB_wdest[2]
+WARNING: [Synth 8-3331] design decode has unconnected port WB_wdest[1]
+WARNING: [Synth 8-3331] design decode has unconnected port WB_wdest[0]
 WARNING: [Synth 8-3331] design pipeline_cpu has unconnected port mem_addr[31]
 WARNING: [Synth 8-3331] design pipeline_cpu has unconnected port mem_addr[30]
 WARNING: [Synth 8-3331] design pipeline_cpu has unconnected port mem_addr[29]
@@ -350,7 +348,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (WB_module
 WARNING: [Synth 8-3332] Sequential element (cause_exc_code_r_reg[4]) is unused and will be removed from module wb.
 WARNING: [Synth 8-3332] Sequential element (cause_exc_code_r_reg[3]) is unused and will be removed from module wb.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 759.254 ; gain = 462.035
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 754.992 ; gain = 456.965
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -362,13 +360,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 776.109 ; gain = 478.891
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 775.918 ; gain = 477.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 779.117 ; gain = 481.898
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 778.926 ; gain = 480.898
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -380,7 +378,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 801.152 ; gain = 503.934
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 801.484 ; gain = 503.457
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -404,7 +402,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 801.152 ; gain = 503.934
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 801.484 ; gain = 503.457
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -417,7 +415,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 801.152 ; gain = 503.934
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 801.484 ; gain = 503.457
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -429,25 +427,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 801.152 ; gain = 503.934
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 801.484 ; gain = 503.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 801.152 ; gain = 503.934
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 801.484 ; gain = 503.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 801.152 ; gain = 503.934
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 801.484 ; gain = 503.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 801.152 ; gain = 503.934
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 801.484 ; gain = 503.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -470,36 +468,36 @@ Report Cell Usage:
 |3     |BUFG     |     1|
 |4     |CARRY4   |    84|
 |5     |LUT1     |   190|
-|6     |LUT2     |    48|
-|7     |LUT3     |   221|
-|8     |LUT4     |   119|
-|9     |LUT5     |   411|
-|10    |LUT6     |  1185|
-|11    |MUXF7    |   384|
-|12    |FDRE     |  1799|
+|6     |LUT2     |    47|
+|7     |LUT3     |   250|
+|8     |LUT4     |   126|
+|9     |LUT5     |   406|
+|10    |LUT6     |  1188|
+|11    |MUXF7    |   385|
+|12    |FDRE     |  1862|
 |13    |FDSE     |     3|
 |14    |IBUF     |    15|
-|15    |OBUF     |   352|
+|15    |OBUF     |   418|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+--------------------+---------+------+
 |      |Instance            |Module   |Cells |
 +------+--------------------+---------+------+
-|1     |top                 |         |  4908|
-|2     |  EXE_module        |exe      |   522|
-|3     |    multiply_module |multiply |   522|
-|4     |  IF_module         |fetch    |   210|
+|1     |top                 |         |  5071|
+|2     |  EXE_module        |exe      |   525|
+|3     |    multiply_module |multiply |   525|
+|4     |  IF_MODULE1        |fetch1   |   206|
 |5     |  MEM_module        |mem      |     7|
 |6     |  WB_module         |wb       |   198|
-|7     |  rf_module         |regfile  |  2428|
+|7     |  rf_module         |regfile  |  2458|
 +------+--------------------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 801.152 ; gain = 503.934
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 801.484 ; gain = 503.457
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 40 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 801.152 ; gain = 159.047
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 801.152 ; gain = 503.934
+Synthesis finished with 0 errors, 0 critical warnings and 37 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 801.484 ; gain = 162.883
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 801.484 ; gain = 503.457
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 99 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -508,9 +506,9 @@ INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-72 Infos, 77 Warnings, 0 Critical Warnings and 0 Errors encountered.
+76 Infos, 73 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 808.211 ; gain = 517.988
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 807.398 ; gain = 516.484
 INFO: [Common 17-1381] The checkpoint 'D:/vivadowork/pipeline/pipeline.runs/synth_1/pipeline_cpu.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 808.211 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Oct 24 23:43:21 2022...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 807.398 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 27 22:57:05 2022...

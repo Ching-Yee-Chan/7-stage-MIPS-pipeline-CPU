@@ -1,7 +1,7 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/vivadowork/pipeline/pipeline.sim/sim_1/synth/func/tb_func_synth.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module data_ram
 INFO: [VRFC 10-311] analyzing module exe
-INFO: [VRFC 10-311] analyzing module fetch
+INFO: [VRFC 10-311] analyzing module fetch1
 INFO: [VRFC 10-311] analyzing module inst_rom
 INFO: [VRFC 10-311] analyzing module mem
 INFO: [VRFC 10-311] analyzing module multiply
@@ -23,3 +23,5 @@ INFO: [VRFC 10-311] analyzing module inst_rom_blk_mem_gen_v8_3_6_synth
 INFO: [VRFC 10-311] analyzing module glbl
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/vivadowork/8_pipeline_cpu/tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2458] undeclared symbol jbr, assumed default net type wire [D:/vivadowork/8_pipeline_cpu/tb.v:63]
+INFO: [VRFC 10-2458] undeclared symbol flush, assumed default net type wire [D:/vivadowork/8_pipeline_cpu/tb.v:64]
