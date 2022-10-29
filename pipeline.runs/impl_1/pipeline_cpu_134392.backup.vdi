@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Fri Oct 28 11:38:03 2022
+# Process ID: 134392
+# Current directory: D:/vivadowork/pipeline/pipeline.runs/impl_1
+# Command line: vivado.exe -log pipeline_cpu.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source pipeline_cpu.tcl -notrace
+# Log file: D:/vivadowork/pipeline/pipeline.runs/impl_1/pipeline_cpu.vdi
+# Journal file: D:/vivadowork/pipeline/pipeline.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source pipeline_cpu.tcl -notrace
+
+*** Halting run - EA reset detected ***
+
+
+
+    while executing
+"start_step init_design"
+    (file "pipeline_cpu.tcl" line 46)
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 28 11:38:07 2022...

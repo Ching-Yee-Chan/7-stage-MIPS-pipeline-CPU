@@ -47,15 +47,16 @@ module fetch1(                    // 取指级
 
     // 新指令：若有Exception,则PC为Exceptio入口地址
     //         若指令跳转，则PC为跳转地址；否则为pc+4
+    
     assign next_pc = exc_valid ? exc_pc : 
                      jbr_taken ? jbr_target : seq_pc;
     always @(posedge clk)    // PC程序计数器
     begin
-        if (!resetn)
+        if ((!resetn) || next_pc > 32'h1b4)    //小心！跳转不能越界
         begin
             pc <= `STARTADDR; // 复位，取程序起始地址
         end
-        else if (next_fetch)
+        else if (next_fetch || flush)
         begin
             pc <= next_pc;    // 不复位，取新指令
         end

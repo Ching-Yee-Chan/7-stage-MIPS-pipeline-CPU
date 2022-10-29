@@ -7,23 +7,25 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module unisims_ver.LUT6
-Compiling module unisims_ver.x_lut2_mux4
-Compiling module unisims_ver.LUT2
-Compiling module unisims_ver.LUT5
 Compiling module unisims_ver.x_lut3_mux8
 Compiling module unisims_ver.LUT3
 Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.LUT6
 Compiling module unisims_ver.FDRE_default
-Compiling module unisims_ver.CARRY4
 Compiling module unisims_ver.x_lut1_mux2
 Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.CARRY4
 Compiling module xil_defaultlib.multiply
 Compiling module xil_defaultlib.exe
 Compiling module unisims_ver.OBUF
+Compiling module xil_defaultlib.decode
 Compiling module unisims_ver.FDSE_default
 Compiling module xil_defaultlib.fetch1
 Compiling module xil_defaultlib.mem
+Compiling module unisims_ver.MUXF7
 Compiling module xil_defaultlib.wb
 Compiling module unisims_ver.BUFG
 Compiling module unisims_ver.IBUF
@@ -46,7 +48,7 @@ Compiling module xil_defaultlib.inst_rom_blk_mem_gen_top
 Compiling module xil_defaultlib.inst_rom_blk_mem_gen_v8_3_6_synt...
 Compiling module xil_defaultlib.inst_rom_blk_mem_gen_v8_3_6
 Compiling module xil_defaultlib.inst_rom
-Compiling module unisims_ver.MUXF7
+Compiling module unisims_ver.MUXF8
 Compiling module unisims_ver.FDRE(IS_C_INVERTED=1'b1)
 Compiling module xil_defaultlib.regfile
 Compiling module xil_defaultlib.pipeline_cpu
