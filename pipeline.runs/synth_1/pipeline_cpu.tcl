@@ -19,16 +19,16 @@ add_files D:/vivadowork/pipeline/instructions.coe
 read_verilog -library xil_defaultlib {
   D:/vivadowork/8_pipeline_cpu/adder.v
   D:/vivadowork/8_pipeline_cpu/alu.v
-  D:/vivadowork/8_pipeline_cpu/decode.v
-  D:/vivadowork/8_pipeline_cpu/exe.v
+  D:/vivadowork/pipeline/decode.v
+  D:/vivadowork/pipeline/exe.v
   D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch1.v
   D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch2.v
   D:/vivadowork/pipeline/pipeline.srcs/sources_1/new/fetch3.v
-  D:/vivadowork/8_pipeline_cpu/mem.v
+  D:/vivadowork/pipeline/mem.v
   D:/vivadowork/8_pipeline_cpu/multiply.v
-  D:/vivadowork/8_pipeline_cpu/regfile.v
-  D:/vivadowork/8_pipeline_cpu/wb.v
-  D:/vivadowork/8_pipeline_cpu/pipeline_cpu.v
+  D:/vivadowork/pipeline/regfile.v
+  D:/vivadowork/pipeline/wb.v
+  D:/vivadowork/pipeline/pipeline_cpu.v
 }
 read_ip -quiet D:/vivadowork/pipeline/pipeline.srcs/sources_1/ip/data_ram/data_ram.xci
 set_property used_in_implementation false [get_files -all d:/vivadowork/pipeline/pipeline.srcs/sources_1/ip/data_ram/data_ram_ooc.xdc]

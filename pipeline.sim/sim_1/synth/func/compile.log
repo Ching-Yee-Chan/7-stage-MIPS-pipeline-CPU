@@ -22,7 +22,7 @@ INFO: [VRFC 10-311] analyzing module inst_rom_blk_mem_gen_top
 INFO: [VRFC 10-311] analyzing module inst_rom_blk_mem_gen_v8_3_6
 INFO: [VRFC 10-311] analyzing module inst_rom_blk_mem_gen_v8_3_6_synth
 INFO: [VRFC 10-311] analyzing module glbl
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/vivadowork/8_pipeline_cpu/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/vivadowork/pipeline/tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb
-INFO: [VRFC 10-2458] undeclared symbol jbr, assumed default net type wire [D:/vivadowork/8_pipeline_cpu/tb.v:66]
-INFO: [VRFC 10-2458] undeclared symbol flush, assumed default net type wire [D:/vivadowork/8_pipeline_cpu/tb.v:67]
+INFO: [VRFC 10-2458] undeclared symbol jbr, assumed default net type wire [D:/vivadowork/pipeline/tb.v:66]
+INFO: [VRFC 10-2458] undeclared symbol flush, assumed default net type wire [D:/vivadowork/pipeline/tb.v:67]

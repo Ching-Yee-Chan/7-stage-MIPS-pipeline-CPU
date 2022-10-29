@@ -72,6 +72,30 @@ module fetch(                    // 取指级
     //故取指模块需要两拍时间
     //故每次PC刷新，IF_over都要置0
     //然后将IF_valid锁存一拍即是IF_over信号
+//    always @(posedge clk)
+//    begin
+//        if (!resetn || next_fetch)
+//        begin
+//            IF_over <= 1'b0;
+//        end
+//        else
+//        begin
+//            IF_over <= IF_valid;
+//        end
+//    end
+    reg wait_over;
+    always @(posedge clk)
+    begin
+        if (!resetn || next_fetch)
+        begin
+            wait_over <= 1'b0;
+        end
+        else
+        begin
+            wait_over <= IF_valid;
+        end
+    end
+     
     always @(posedge clk)
     begin
         if (!resetn || next_fetch)
@@ -79,10 +103,8 @@ module fetch(                    // 取指级
             IF_over <= 1'b0;
         end
         else
-        begin
-            IF_over <= IF_valid;
+            IF_over <= IF_valid & wait_over;
         end
-    end
     //如果指令rom为异步读的，则IF_valid即是IF_over信号，
     //即取指一拍完成
 //-----{IF执行完成}end

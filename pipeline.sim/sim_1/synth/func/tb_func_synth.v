@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.1 (win64) Build 1846317 Fri Apr 14 18:55:03 MDT 2017
-// Date        : Sat Oct 29 17:53:36 2022
+// Date        : Sat Oct 29 18:38:30 2022
 // Host        : LAPTOP-P861Q9K2 running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode funcsim -nolib -force -file
 //               D:/vivadowork/pipeline/pipeline.sim/sim_1/synth/func/tb_func_synth.v

@@ -23,8 +23,8 @@ module regfile(
     // read two ports combinationally
     // write third port on rising edge of clock
     // register 0 hardwired to 0
-
-    always @(posedge clk)
+    //这里改为下降沿触发，与教材一致
+    always @(negedge clk)
     begin
         if (wen) 
         begin

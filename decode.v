@@ -6,16 +6,17 @@
 //   > 日期  : 2016-04-14
 //*************************************************************************
 module decode(                      // 译码级
+    input              clk,
     input              ID_valid,    // 译码级有效信号
     input      [ 63:0] IF_ID_bus_r, // IF->ID总线
-    input      [ 31:0] rs_value,    // 第一源操作数值
-    input      [ 31:0] rt_value,    // 第二源操作数值
+    input      [ 31:0] rs_value_raw,    // 第一源操作数值
+    input      [ 31:0] rt_value_raw,    // 第二源操作数值
     output     [  4:0] rs,          // 第一源操作数地址 
     output     [  4:0] rt,          // 第二源操作数地址
     output     [ 32:0] jbr_bus,     // 跳转总线
 //  output             inst_jbr,    // 指令为跳转分支指令,五级流水不需要
     output             ID_over,     // ID模块执行完成
-    output     [166:0] ID_EXE_bus,  // ID->EXE总线
+    output     [178:0] ID_EXE_bus,  // ID->EXE总线
     
     //5级流水新增
      input              IF_over,     //对于分支指令，需要该信号
@@ -23,9 +24,24 @@ module decode(                      // 译码级
     input      [  4:0] MEM_wdest,   // MEM级要写回寄存器堆的目标地址号
     input      [  4:0] WB_wdest,    // WB级要写回寄存器堆的目标地址号
     
+    //旁路单元专用
+    input              MEM_RegWrite, 
+    input      [ 31:0] MEM_data,
+    input              MEM_load, //load-IDuse检测信号
+    input      [ 31:0] load_MEM_data, //load-IDuse专用旁路 
+    
+    //冒险检测专用
+    input              EX_MemRead, 
+    output         reg has_been_blocked, 
+    input              MEM_over, 
+    
     //展示PC
-    output     [ 31:0] ID_pc
+    output     [ 31:0] ID_pc 
+//    output     [ 31:0] rs_data, 
+//    output     [ 31:0] rt_data
 );
+//assign rs_data = rs_value;
+//assign rt_data = rt_value;
 //-----{IF->ID总线}begin
     wire [31:0] pc;
     wire [31:0] inst;
@@ -199,6 +215,31 @@ module decode(                      // 译码级
     wire [31:0] bd_pc;   //延迟槽指令PC值
     assign bd_pc = pc + 3'b100;
     
+    //旁路MEM->ID
+    wire relate_rs;
+    wire relate_rt;
+    assign relate_rs = inst_jr | inst_BEQ | inst_BNE | inst_BGEZ | inst_BGTZ | inst_BLEZ | inst_BLTZ;
+    assign relate_rt = inst_BEQ | inst_BNE;
+    
+    wire MEMtoID_rs;
+    assign MEMtoID_rs = MEM_RegWrite &
+                         (|MEM_wdest) &       //MEM_wdest!=0
+                         relate_rs & 
+                         (MEM_wdest == rs);
+    wire MEMtoID_rt;
+    assign MEMtoID_rt = MEM_RegWrite &
+                          (|MEM_wdest) &       //MEM_wdest!=0
+                          relate_rt & 
+                          (MEM_wdest == rt);
+                          
+    wire [31:0] true_MEM_data;
+    assign true_MEM_data = MEM_load ? load_MEM_data : MEM_data;
+                          
+    wire [31:0] rs_value;
+    wire [31:0] rt_value;
+    assign rs_value = MEMtoID_rs ? true_MEM_data : rs_value_raw;
+    assign rt_value = MEMtoID_rt ? true_MEM_data : rt_value_raw;
+    
     //无条件跳转
     wire        j_taken;
     wire [31:0] j_target;
@@ -228,8 +269,10 @@ module decode(                      // 译码级
     //jump and branch指令
     wire jbr_taken;
     wire [31:0] jbr_target;
-    assign jbr_taken = (j_taken | br_taken) & ID_over; 
-    assign jbr_target = j_taken ? j_target : br_target;
+    wire [31:0] brwait_target;
+    assign jbr_taken = ((j_taken | br_taken) & ID_over) | all_wait; 
+    assign jbr_target = (j_taken & ID_over) ? j_target : brwait_target;
+    assign brwait_target =  (br_taken & ID_over) ? br_target : pc + 4;
     
     //ID到IF的跳转总线
     assign jbr_bus = {jbr_taken, jbr_target};
@@ -237,19 +280,43 @@ module decode(                      // 译码级
 
 //-----{ID执行完成}begin
     //由于是流水的，存在数据相关
-    wire rs_wait;
-    wire rt_wait;
-    assign rs_wait = ~inst_no_rs & (rs!=5'd0)
-                   & ( (rs==EXE_wdest) | (rs==MEM_wdest) | (rs==WB_wdest) );
-    assign rt_wait = ~inst_no_rt & (rt!=5'd0)
-                   & ( (rt==EXE_wdest) | (rt==MEM_wdest) | (rt==WB_wdest) );
+//    wire rs_wait;
+//    wire rt_wait;
+    wire br_rs;
+    wire br_rt;
+    wire id_stall;
+    wire load_use;
+    wire all_wait;
+    wire load_ID_stall;
+    
+//    assign rs_wait = ~inst_no_rs & (rs!=5'd0)
+//                   & ( (rs==EXE_wdest) | (rs==MEM_wdest));
+//    assign rt_wait = ~inst_no_rt & (rt!=5'd0)
+//                   & ( (rt==EXE_wdest) | (rt==MEM_wdest));
+    assign br_rs = relate_rs & (rs == EXE_wdest) & (EXE_wdest!=5'd0);
+    assign br_rt = relate_rt & (rt == EXE_wdest) & (EXE_wdest!=5'd0);
+    assign id_stall = br_rs | br_rt;
+    assign load_use = EX_MemRead & 
+                      (EXE_wdest!=5'd0) & 
+                      (((~inst_no_rs) & (EXE_wdest == rs)) | ((~inst_no_rt) & (EXE_wdest == rt)));
+    assign all_wait = id_stall | load_use;
+    assign load_ID_stall = MEM_RegWrite & 
+                           MEM_wdest!=5'd0 & 
+                           ((MEM_wdest == rs) | (MEM_wdest == rt)) & 
+                           ~MEM_over;
+    
+    //all_wait锁存一周期，用于下次判断是否为阻塞过
+    always @(posedge clk)
+    begin
+        has_been_blocked <= all_wait;
+    end
     
     //对于分支跳转指令，只有在IF执行完成后，才可以算ID完成；
     //否则，ID级先完成了，而IF还在取指令，则next_pc不能锁存到PC里去，
     //那么等IF完成，next_pc能锁存到PC里去时，jbr_bus上的数据已变成无效，
     //导致分支跳转失败
     //(~inst_jbr | IF_over)即是(~inst_jbr | (inst_jbr & IF_over))
-    assign ID_over = ID_valid & ~rs_wait & ~rt_wait & (~inst_jbr | IF_over);
+    assign ID_over = ID_valid & ~all_wait & (~inst_jbr | IF_over) & ~load_ID_stall;
 //-----{ID执行完成}end
 
 //-----{ID->EXE总线}begin
@@ -306,6 +373,10 @@ module decode(                      // 译码级
     wire       eret;
     wire       rf_wen;    //写回的寄存器写使能
     wire [4:0] rf_wdest;  //写回的目的寄存器
+    
+    //旁路专用
+    
+    
     assign syscall  = inst_SYSCALL;
     assign eret     = inst_ERET;
     assign mfhi     = inst_MFHI;
@@ -320,6 +391,7 @@ module decode(                      // 译码级
     assign store_data = rt_value;
     assign ID_EXE_bus = {multiply,mthi,mtlo,                   //EXE需用的信息,新增
                          alu_control,alu_operand1,alu_operand2,//EXE需用的信息
+                         inst_no_rs, inst_no_rt, rs, rt,       //旁路专用信息
                          mem_control,store_data,               //MEM需用的信号
                          mfhi,mflo,                            //WB需用的信号,新增
                          mtc0,mfc0,cp0r_addr,syscall,eret,     //WB需用的信号,新增

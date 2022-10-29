@@ -8,7 +8,7 @@
 module mem(                          // 访存级
     input              clk,          // 时钟
     input              MEM_valid,    // 访存级有效信号
-    input      [153:0] EXE_MEM_bus_r,// EXE->MEM总线
+    input      [158:0] EXE_MEM_bus_r,// EXE->MEM总线
     input      [ 31:0] dm_rdata,     // 访存读数据
     output     [ 31:0] dm_addr,      // 访存读写地址
     output reg [  3:0] dm_wen,       // 访存写使能
@@ -19,6 +19,16 @@ module mem(                          // 访存级
     //5级流水新增接口
     input              MEM_allow_in, // MEM级允许下级进入
     output     [  4:0] MEM_wdest,    // MEM级要写回寄存器堆的目标地址号
+    
+    //旁路专用
+    output             RegWrite, 
+    input              WB_RegWrite, 
+    input      [  4:0] WB_wdest, 
+    input       [31:0] WB_data, 
+    output             MEM_load,
+    
+    //冒险控制
+    output      [32:0] jbr_bus, //若阻塞，须跳转
      
     //展示PC
     output     [ 31:0] MEM_pc
@@ -26,7 +36,11 @@ module mem(                          // 访存级
 //-----{EXE->MEM总线}begin
     //访存需要用到的load/store信息
     wire [3 :0] mem_control;  //MEM需要使用的控制信号
+    
+    //旁路专用
     wire [31:0] store_data;   //store操作的存的数据
+    wire [31:0] raw_store_data;
+    wire [4 :0] rt;
     
     //EXE结果和HI/LO数据
     wire [31:0] exe_result;
@@ -48,8 +62,9 @@ module mem(                          // 访存级
     //pc
     wire [31:0] pc;    
     assign {mem_control,
-            store_data,
+            raw_store_data,
             exe_result,
+            rt,     //旁路专用
             lo_result,
             hi_write,
             lo_write,
@@ -71,6 +86,18 @@ module mem(                          // 访存级
     wire ls_word;    //load/store为字节还是字,0:byte;1:word
     wire lb_sign;    //load一字节为有符号load
     assign {inst_load,inst_store,ls_word,lb_sign} = mem_control;
+
+    //旁路专用
+    assign RegWrite = rf_wen;
+    assign MEM_load = inst_load;
+    
+    wire WBtoMEM;
+    assign WBtoMEM = inst_store & 
+                     WB_RegWrite & 
+                     (|WB_wdest) &
+                     (rt == WB_wdest);
+    assign store_data = WBtoMEM ? WB_data : raw_store_data;
+    
 
     //访存读写地址
     assign dm_addr = exe_result;
@@ -132,22 +159,52 @@ module mem(                          // 访存级
     //即发地址的下一拍时钟才能得到load的数据
     //故mem在进行load操作时有需要两拍时间才能取到数据
     //而对其他操作，则只需要一拍时间
+//    always @(posedge clk)
+//    begin
+//        if (MEM_allow_in)
+//        begin
+//            MEM_valid_r <= 1'b0;
+//        end
+//        else
+//        begin
+//            MEM_valid_r <= MEM_valid;
+//        end
+//    end
+    
+    
     reg MEM_valid_r;
+    reg wait_over;
     always @(posedge clk)
     begin
-        if (MEM_allow_in)
+        if(MEM_allow_in)
         begin
-            MEM_valid_r <= 1'b0;
+            wait_over <=1'b0;
         end
         else
         begin
-            MEM_valid_r <= MEM_valid;
+            wait_over <= MEM_valid & inst_load;
         end
     end
-    assign MEM_over = inst_load ? MEM_valid_r : MEM_valid;
+     
+    always @(posedge clk)
+    begin
+        if(MEM_allow_in)
+        begin
+            MEM_valid_r <=1'b0;
+        end
+        else
+        begin
+            MEM_valid_r <= MEM_valid & wait_over & inst_load;
+        end
+    end
+    
+    assign MEM_over = inst_load ? MEM_valid_r :MEM_valid;
     //如果数据ram为异步读的，则MEM_valid即是MEM_over信号，
     //即load一拍完成
 //-----{MEM执行完成}end
+
+//冒险控制
+    assign jbr_bus = {MEM_valid & inst_load & MEM_over, pc+8};
 
 //-----{MEM模块的dest值}begin
    //只有在MEM模块有效时，其写回目的寄存器号才有意义

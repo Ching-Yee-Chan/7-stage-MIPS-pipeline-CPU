@@ -1,27 +1,28 @@
-Unable to capture context for thread 234912 in process 234384, can not generate back trace
-Unable to capture context for thread 234804 in process 234384, can not generate back trace
-Unable to capture context for thread 228328 in process 234384, can not generate back trace
-Unable to capture context for thread 235372 in process 234384, can not generate back trace
+Unable to capture context for thread 244612 in process 243252, can not generate back trace
+Unable to capture context for thread 247588 in process 243252, can not generate back trace
+Unable to capture context for thread 248124 in process 243252, can not generate back trace
+Unable to capture context for thread 248452 in process 243252, can not generate back trace
 Exception at PC 0x00007FF8326BCD29
 Exception at PC 0x00007FF8326BCD29
-Exception at PC 0x00007FFF69D6BB93
+Exception at PC 0x00007FFF6286BB93
 Printing stacktrace...
 
 Exception at PC 0x00007FF8326BCD29
 Exception at PC 0x00007FF8326BCD29
 Exception at PC 0x00007FF8326BCD29
-[0]  [0x00007FFF69D6BB93]
-[1]  [0x00007FFF69D6BB93]
-[2]  [0x00007FFF69D6B4A1]
-[3]  [0x00007FFF69D6B3EF]
-[4]  [0x00007FFF69D519FE]
-[5]  [0x00007FFF69D50ED1]
-[6]  [0x00007FFF69D50D76]
-[7]  [0x00007FFF69CF79F6]
-[8]  [0x00007FFF69CE7AFB]
-[9]  [0x00007FFF69E0E90A]
-[10]  [0x00007FFF69E29F87]
-[11]  [0x00007FFF69E2A05F]
+[0]  [0x00007FFF6286BB93]
+[1]  [0x00007FFF6286BB93]
+[2]  [0x00007FFF6286B4A1]
+[3]  [0x00007FFF6286B3EF]
+Exception at PC 0x00007FF8326BCD29
+[4]  [0x00007FFF628519FE]
+[5]  [0x00007FFF62850ED1]
+[6]  [0x00007FFF62850D76]
+[7]  [0x00007FFF627F79F6]
+[8]  [0x00007FFF627E7AFB]
+[9]  [0x00007FFF6290E90A]
+[10]  [0x00007FFF62929F87]
+[11]  [0x00007FFF6292A05F]
 [12] (BaseThreadInitThunk+0x14) [0x00007FF834D67034]
 [13] (RtlUserThreadStart+0x21) [0x00007FF834F826A1]
 Done
@@ -37,21 +38,20 @@ Exception at PC 0x00007FF8326BCD29
 Exception at PC 0x00007FF8326BCD29
 Exception at PC 0x00007FF8326BCD29
 Exception at PC 0x00007FF8326BCD29
-Exception at PC 0x00007FF8326BCD29
-Exception at PC 0x00007FFF69A71A52
+Exception at PC 0x00007FFF62571A52
 Attemped to write at address 0x00007FFFB9FF9BA4
 Printing stacktrace...
 
-[0]  [0x00007FFF69A71A52]
-[1]  [0x00007FFF69A71A52]
-[2]  [0x00007FFF69A71AD4]
-[3]  [0x00007FFF69BB3FF7]
-[4]  [0x00007FFF69A99128]
-[5]  [0x00007FFF69D4DFB9]
-[6]  [0x00007FFF69F1EF23]
-[7]  [0x00007FFF69E2B06B]
-[8]  [0x00007FFF69E208AF]
-[9]  [0x00007FFF69E20A32]
+[0]  [0x00007FFF62571A52]
+[1]  [0x00007FFF62571A52]
+[2]  [0x00007FFF62571AD4]
+[3]  [0x00007FFF626B3FF7]
+[4]  [0x00007FFF62599128]
+[5]  [0x00007FFF6284DFB9]
+[6]  [0x00007FFF62A1EF23]
+[7]  [0x00007FFF6292B06B]
+[8]  [0x00007FFF629208AF]
+[9]  [0x00007FFF62920A32]
 [10] (RtlActivateActivationContextUnsafeFast+0x11d) [0x00007FF834F49A1D]
 [11] (LdrShutdownProcess+0x24c) [0x00007FF834F8DCEC]
 [12] (RtlExitUserProcess+0xad) [0x00007FF834F8DA7D]

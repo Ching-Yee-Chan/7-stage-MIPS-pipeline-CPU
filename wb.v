@@ -22,6 +22,8 @@ module wb(                       // 写回级
      output [  4:0] WB_wdest,     // WB级要写回寄存器堆的目标地址号
      output         cancel,       // syscall和eret到达写回级时会发出cancel信号，
                                   // 取消已经取出的正在其他流水级执行的指令
+     //旁路专用
+     output        regWrite, 
  
      //展示PC和HI/LO值
      output [ 31:0] WB_pc,
@@ -66,6 +68,9 @@ module wb(                       // 写回级
             eret,
             pc} = MEM_WB_bus_r;
 //-----{MEM->WB总线}end
+
+//旁路专用
+    assign regWrite = wen;
 
 //-----{HI/LO寄存器}begin
     //HI用于存放乘法结果的高32位
